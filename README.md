@@ -7,6 +7,7 @@ A full-stack web application for managing training events, nominees, and feedbac
 ⚡ **New to this project?** Start here:
 
 - **[SETUP_COMMANDS.md](SETUP_COMMANDS.md)** ⭐ - **Master guide with all commands to run the project (5-min quick start)**
+- **[FRONTEND_ERRORS_FIXES.md](FRONTEND_ERRORS_FIXES.md)** 🔧 - **Fix common frontend errors (favicon, CORS 403, React Router warnings)**
 - **[GITHUB_SETUP.md](GITHUB_SETUP.md)** - Complete Git & GitHub commands reference
 - **[backend/requirements.txt](backend/requirements.txt)** - Python dependencies with installation commands
 - **[frontend/NPM_COMMANDS.md](frontend/NPM_COMMANDS.md)** - NPM commands and package management

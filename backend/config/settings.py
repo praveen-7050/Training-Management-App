@@ -100,19 +100,19 @@ REST_FRAMEWORK = {
 }
 
 CORS_ALLOWED_ORIGINS = [
-    "http://localhost:5174",
-    "http://127.0.0.1:5174",
-    "http://localhost:5175",
-    "http://127.0.0.1:5175",
+    "http://localhost:5173",      # Vite dev server default port
+    "http://127.0.0.1:5173",
+    "http://localhost:3000",      # Alternative development port
+    "http://127.0.0.1:3000",
 ]
 
 CORS_ALLOW_CREDENTIALS = True
 
 CSRF_TRUSTED_ORIGINS = [
-    "http://localhost:5174",
-    "http://127.0.0.1:5174",
-    "http://localhost:5175",
-    "http://127.0.0.1:5175",
+    "http://localhost:5173",      # Vite dev server default port
+    "http://127.0.0.1:5173",
+    "http://localhost:3000",      # Alternative development port
+    "http://127.0.0.1:3000",
 ]
 
 SESSION_ENGINE = "django.contrib.sessions.backends.db"

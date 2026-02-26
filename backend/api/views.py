@@ -322,10 +322,15 @@ def submit_feedback(request, nominee_id):
 
     # Check if feedback already exists
     if hasattr(nominee, "feedback") and nominee.feedback:
-        return Response(
-            {"error": "Feedback has already been submitted."},
-            status=status.HTTP_400_BAD_REQUEST,
-        )
+        # Allow updating existing feedback
+        serializer = FeedbackSerializer(nominee.feedback, data=data, partial=True)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(
+                {"message": "Feedback updated successfully."},
+                status=status.HTTP_200_OK,
+            )
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
     data = request.data.copy()
     data["nominee"] = nominee.id
@@ -348,6 +353,12 @@ def get_nominee_info(request, nominee_id):
     except Nominee.DoesNotExist:
         return Response(
             {"error": "Nominee not found."}, status=status.HTTP_404_NOT_FOUND
+        )
+
+    if nominee.status != "Attended":
+        return Response(
+            {"error": "Feedback is only available for attended nominees."},
+            status=status.HTTP_400_BAD_REQUEST,
         )
 
     return Response(

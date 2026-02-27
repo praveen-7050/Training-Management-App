@@ -2,8 +2,6 @@ from django.db import models
 
 
 class Event(models.Model):
-    """Training event model."""
-
     title = models.CharField(max_length=255)
     description = models.TextField()
     date = models.DateField()
@@ -19,7 +17,6 @@ class Event(models.Model):
 
 
 class Nominee(models.Model):
-    """Nominee for a training event."""
 
     STATUS_CHOICES = [
         ("Pending", "Pending"),
@@ -43,7 +40,6 @@ class Nominee(models.Model):
 
 
 class Feedback(models.Model):
-    """Feedback from a nominee after attending an event."""
 
     nominee = models.OneToOneField(
         Nominee, on_delete=models.CASCADE, related_name="feedback"

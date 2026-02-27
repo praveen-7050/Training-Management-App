@@ -162,8 +162,6 @@ function Dashboard() {
                   )}
                 </div>
               </div>
-
-              {/* Nominees Table */}
               <div className="card-custom">
                 <div className="card-header">
                   <i className="bi bi-people me-2"></i>Nominees ({nominees.length})

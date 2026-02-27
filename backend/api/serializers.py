@@ -71,7 +71,6 @@ class EventSerializer(serializers.ModelSerializer):
 
 
 class EventListSerializer(serializers.ModelSerializer):
-    """Lighter serializer for event lists (without full nominees)."""
 
     total_nominees = serializers.SerializerMethodField()
     accepted_count = serializers.SerializerMethodField()

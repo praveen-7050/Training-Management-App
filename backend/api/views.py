@@ -322,7 +322,6 @@ def submit_feedback(request, nominee_id):
 
     # Check if feedback already exists
     if hasattr(nominee, "feedback") and nominee.feedback:
-        # Allow updating existing feedback
         serializer = FeedbackSerializer(nominee.feedback, data=data, partial=True)
         if serializer.is_valid():
             serializer.save()
